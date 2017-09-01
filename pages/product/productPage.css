@@ -1,0 +1,126 @@
+.sub-header {
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "PT Sans", serif;
+    font-size: 16px;
+    height: 60px;
+    padding-top: 18px;
+}
+
+.sub-header .back-link {
+    display: block;
+    float: left;
+    text-decoration: underline;
+}
+
+.sub-header .category-label {
+    float: right;
+}
+
+.sub-header .category-label .category {
+    font-weight: bold;
+}
+
+.product-card-detailed {
+    height: 390px;
+    width: 100%;
+    background-color: #f4f4f6;
+    font-size: 0;
+}
+
+.product-card-detailed .picture-container,
+.product-card-detailed .details-container {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 390px;
+}
+
+.product-card-detailed .picture-container {
+    padding: 20px;
+    position: relative;
+}
+
+.product-card-detailed .picture-container .product-picture {
+    width: 100%;
+    height: 100%;
+    background-image: url(1.jpg);
+    background-size: cover;
+}
+
+.product-card-detailed .picture-container .rating-bar {
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+}
+
+.product-card-detailed .details-container .product-details-panel {
+    position: relative;
+    height: 100%;
+}
+
+.product-card-detailed .details-container .product-description {
+    margin-bottom: 20px;
+}
+
+.product-card-detailed .details-container .instruction-block {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-card-detailed .details-container a {
+    color: #3FC5CB;
+}
+
+.product-card-detailed .product-details-footer {
+    width: calc(100% - 20px);
+    padding-top: 10px;
+    border-top: 1px solid #D6D6D6;
+    background-color: #f4f4f6;
+}
+
+.product-card-detailed .product-details-footer button {
+    right: 0;
+    top: 15px;
+}
+
+.product .modal {
+    width: 740px;
+}
+
+@media (min-width: 800px) {
+    .product-card-detailed .details-container .product-details-panel {
+        padding-left: 0;
+    }
+
+    .product-card-detailed .details-container .product-description {
+        max-height: 150px;
+        overflow: scroll;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-card-detailed {
+        width: 100%;
+        height: auto;
+        margin-bottom: 400px;
+    }
+
+    .product-card-detailed .picture-container,
+    .product-card-detailed .details-container {
+        float: none;
+        width: 100%;
+    }
+
+    .product-card-detailed .details-container {
+        height: auto;
+    }
+
+    .product-card-detailed .product-details-footer {
+        width: calc(100% - 40px);
+    }
+
+    .product .modal {
+        width: calc(100% - 60px);
+    }
+}

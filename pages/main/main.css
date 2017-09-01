@@ -1,0 +1,72 @@
+.main .filter-bar {
+    height: 55px;
+    width: 100%;
+    padding-top: 22px;
+}
+
+.main .filter-bar * {
+    float: right;
+    margin-left: 15px;
+}
+
+.main .filter-bar .text-filter {
+    background: #ffffff url(search.svg) no-repeat calc(100% - 10px);
+    background-size: 10%;
+}
+
+.main .filter-bar button {
+    width: 140px;
+}
+
+.main .product-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .product-container .product-card {
+    display: inline-block;
+    width: 32%;
+}
+
+.main .product-container .product-card {
+    margin-top: 25px;
+}
+
+.main .filter-popup {
+    top: 66px;
+    right: 30px;
+    z-index: 10;
+}
+
+.main .filter-popup .arrow-pointer {
+    left: 420px;
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+    .main .product-container .product-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 800px) {
+    .main .product-container .product-card {
+        width: auto;
+        align-self: stretch;
+    }
+
+    .main .filter-bar button {
+        float: left;
+        margin: 0;
+    }
+
+    .main .filter-popup {
+        width: calc(100% - 60px);
+    }
+
+    .main .filter-popup .arrow-pointer {
+        left: 60px;
+    }
+}
+

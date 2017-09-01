@@ -1,0 +1,66 @@
+.product-details-panel {
+    min-height: 220px;
+    width: 100%;
+    padding: 0 20px 65px 20px;
+    background-color: inherit;
+}
+
+.product-details-panel .product-title {
+    min-height: 50px;
+    width: 100%;
+    padding: 15px 0 10px 0;
+    border-bottom: 2px solid #3FC5CB;
+    color: #000000;
+    font-family: "PT Sans", serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-details-panel .product-description {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 100px;
+    text-align: justify;
+    overflow: hidden;
+    color: #000000;
+    font-family: "PT Sans", serif;
+    font-size: 14px;
+}
+
+.product-details-panel .product-details-footer {
+    line-height: 35px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.product-details-panel .product-details-footer button {
+    position: absolute;
+    right: 35px;
+    top: 5px;
+}
+
+.product-details-panel .product-details-footer .price-label {
+    display: inline-block;
+    padding-top: 5px;
+    height: 35px;
+    color: #000000;
+    font-family: "PT Sans", serif;
+    font-size: 0; /*hack to remove a space between child spans*/
+    font-weight: bold;
+}
+
+.product-details-panel .product-details-footer .price-label span {
+    font-size: 24px;
+}
+
+.product-details-panel .product-details-footer .price-label .currency-label {
+    color: #288575;
+}
+
+.product-details-panel .product-details-footer .items-left-label {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: 5%;
+    margin-left: 5px;
+}

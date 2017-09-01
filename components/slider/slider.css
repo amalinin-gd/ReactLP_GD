@@ -1,0 +1,61 @@
+.slider {
+    height: 30px;
+    width: 333px;
+    position: relative;
+}
+
+.slider-bar {
+    display: inline-block;
+    height: 2px;
+    border: 1px solid #B8B8B8;
+}
+
+.slider-bar-active {
+    border-color: #288575;
+}
+
+.slider-bar-left {
+    left: 0;
+    width: 48px;
+}
+
+.slider-bar-middle {
+    width: 190px;
+}
+
+.slider-bar-right {
+    width: 86px;
+}
+
+.slider-button {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #288575;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.slider-button-left {
+    left: 40px;
+    top: 3px;
+}
+
+.slider-button-right {
+    left: 234px;
+    bottom: 7px;
+}
+
+.slider-button span {
+    position: absolute;
+    top: 24px;
+    left: -5px;
+    color: #000000;
+    font-family: "PT Sans", serif;
+    font-size: 12px;
+    display: block;
+    width: 30px;
+    text-align: center;
+    cursor: auto;
+}
+

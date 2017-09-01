@@ -1,0 +1,7 @@
+.radio-button-group {
+    text-align: left;
+}
+
+.radio-button-group input[type="radio"].radio-button:not(:first-child) + label {
+    margin-left: 8px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Product</title>
+        <link rel="stylesheet" href="../../../components/app/app.css"/>
+        <link rel="stylesheet" href="../../../components/header/header.css"/>
+        <link rel="stylesheet" href="../../../components/button/button.css"/>
+        <link rel="stylesheet" href="../../../components/ratingBar/ratingBar.css"/>
+        <link rel="stylesheet" href="../../../components/productDetailsPanel/productDetailsPanel.css"/>
+        <link rel="stylesheet" href="../../../components/footer/footer.css"/>
+        <link rel="stylesheet" href="../../../components/modal/modal.css"/>
+        <link rel="stylesheet" href="../../../components/textInput/textInput.css"/>
+        <link rel="stylesheet" href="../../../components/select/select.css"/>
+        <link rel="stylesheet" href="../../../components/editModalContent/editModalContent.css"/>
+        <link rel="stylesheet" href="../../../components/radioButton/radioButton.css"/>
+        <link rel="stylesheet" href="../../../components/radioButtonGroup/radioButtonGroup.css"/>
+        <link rel="stylesheet" href="../productPage.css"/>
+    </head>
+    <body>
+        <div id="app" class="product">
+            <div class="modal modal-multi-line edit-modal">
+                <div class="modal-header">Edit "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore"
+                </div>
+                <div class="modal-body">
+                    <div class="edit-modal-content">
+                        <div class="content-column">
+                            <div class="text-input-container">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name"/>
+                            </div>
+                            <div class="labeled-control">
+                                <div class="label-container">
+                                    <span>Category:</span>
+                                </div>
+                                <div>
+                                    <select class="select">
+                                        <option value="0"></option>
+                                        <option value="1">Active wear</option>
+                                        <option value="2">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="labeled-control">
+                                <div class="label-container">
+                                    <span>Gender:</span>
+                                </div>
+                                <div class="radio-button-group">
+                                    <input type="radio" id="male" name="male" value="male" class="radio-button"/>
+                                    <label for="male">Man</label>
+                                    <input type="radio" id="female" class="radio-button"/>
+                                    <label for="female" name="female" value="female">Woman</label>
+                                    <input type="radio" id="unisex" name="unisex" value="unisex"
+                                           class="radio-button"/>
+                                    <label for="unisex">Unisex</label>
+                                </div>
+                            </div>
+                            <div class="text-input-container">
+                                <label for="description">Description:</label>
+                                <textarea id="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="text-input-container">
+                                <label for="link">Link to image:</label>
+                                <input type="text" id="link"/>
+                            </div>
+                            <div class="product-picture"></div>
+                            <div class="text-input-container">
+                                <label for="price">Price:</label>
+                                <input type="text" id="price"/>
+                            </div>
+
+                            <div class="labeled-control">
+                                <div class="label-container">
+                                    <span>Rating:</span>
+                                </div>
+                                <div>
+                                    <select class="select">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="button button-big">Cancel</button>
+                        <button class="button button-primary button-big">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- remove "active" class from this div to disable blur effect. Add class "active" -->
+            <!-- to turn it on.-->
+            <div id="blured-container" class="active">
+                <div id="header" class="header">
+                    <div class="centered-bar">
+                        <img src="../../../components/header/logo.svg" alt="cart" class="cart-icon"/>
+
+                        <div class="username-container">
+                            <span>Hello, John Doe</span>
+                            <img src="../../../components/header/header-logout.svg" class="exit-icon" alt="exit"/>
+                        </div>
+                        <span style="clear: both"></span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="sub-header">
+                    <span class="back-link">
+                        Back
+                    </span>
+
+                        <div class="category-label">
+                            <span>Category: </span>
+                            <span class="category"> Man / Active wear</span>
+                        </div>
+                    </div>
+                    <div class="product-card-detailed">
+                        <div class="picture-container">
+                            <div class="product-picture"></div>
+                            <div class="rating-bar">
+                                <div class="rating-star rating-star-active"></div>
+                                <div class="rating-star rating-star-active"></div>
+                                <div class="rating-star rating-star-active"></div>
+                                <div class="rating-star"></div>
+                                <div class="rating-star"></div>
+                            </div>
+                        </div>
+                        <div class="details-container">
+                            <div class="product-details-panel">
+                                <div class="product-title">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore
+                                </div>
+                                <p class="product-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+
+                                <div class="instruction-block">
+                                    <span>You can </span>
+                                    <a href="#">add 5 more</a>
+                                    <span>. You can also </span>
+                                    <a href="#">edit</a>
+                                    <span> details or </span>
+                                    <a href="#">delete</a>
+                                    <span> them.</span>
+                                </div>
+                                <div class="product-details-footer">
+                                    <div class="price-label">
+                                        <span class="currency-label">$</span>
+                                        <span>32.15</span>
+                                    </div>
+                                    <span class="items-left-label">(9 items left)</span>
+                                    <button class="button button-primary">Show more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <span class="copyright">Copyright "<span class="copyright-company">Demo Shop</span>", 2017</span>
+                </div>
+            </div>
+            <div id="overlay"></div>
+        </div>
+    </body>
+</html>

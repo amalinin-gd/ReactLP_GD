@@ -1,0 +1,47 @@
+.button {
+    display: inline-block;
+    height: 35px;
+    min-width: 120px;
+    border-width: 0;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-family: "PT Sans", serif;
+    font-size: 14px;
+    background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%);
+}
+
+.button:active, .button:focus {
+    outline: none;
+}
+
+.button:active:enabled {
+    background: linear-gradient(0deg, #B1B1B1 0%, #777777 100%);
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button:disabled {
+    opacity: 0.5;
+}
+
+.button-primary {
+    background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
+}
+
+.button-primary:active:enabled {
+    background: linear-gradient(0deg, #2BBCC2 100%, #1B745F 0%);
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.button-big {
+    height: 50px;
+    min-width: 170px;
+    font-family: "PT Sans Caption", serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+

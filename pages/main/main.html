@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <link rel="stylesheet" href="../../components/app/app.css"/>
+        <link rel="stylesheet" href="../../components/header/header.css"/>
+        <link rel="stylesheet" href="../../components/button/button.css"/>
+        <link rel="stylesheet" href="../../components/select/select.css"/>
+        <link rel="stylesheet" href="../../components/radioButton/radioButton.css"/>
+        <link rel="stylesheet" href="../../components/checkbox/checkbox.css"/>
+        <link rel="stylesheet" href="../../components/textInput/textInput.css"/>
+        <link rel="stylesheet" href="../../components/slider/slider.css"/>
+        <link rel="stylesheet" href="../../components/filterPopup/filterPopup.css"/>
+        <link rel="stylesheet" href="../../components/productCard/productCard.css"/>
+        <link rel="stylesheet" href="../../components/ratingBar/ratingBar.css"/>
+        <link rel="stylesheet" href="../../components/productDetailsPanel/productDetailsPanel.css"/>
+        <link rel="stylesheet" href="../../components/footer/footer.css"/>
+        <link rel="stylesheet" href="../../components/radioButtonGroup/radioButtonGroup.css"/>
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+    <body>
+        <div id="app" class="main">
+            <div id="header" class="header">
+                <div class="centered-bar">
+                    <img src="../../components/header/logo.svg" alt="cart" class="cart-icon"/>
+
+                    <div class="username-container">
+                        <span>Hello, John Doe</span>
+                        <img src="../../components/header/header-logout.svg" class="exit-icon" alt="exit"/>
+                    </div>
+                    <span style="clear: both"></span>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="filter-bar">
+                    <div class="text-input-container">
+                        <input type="text" placeholder="Filter by text..." class="text-filter"/>
+                    </div>
+                    <button class="button button-primary">Filter options</button>
+                </div>
+
+                <div class="filter-popup">
+                    <div class="arrow-pointer"></div>
+                    <div class="filter-row-top">
+                        <div class="labeled-filter">
+                            <div class="label-container">
+                                <span>Availability:</span>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="available-only" class="checkbox-switch"/>
+                                <label for="available-only">Available Only</label>
+                            </div>
+                        </div>
+                        <div class="labeled-filter">
+                            <div class="label-container">
+                                <span>Gender:</span>
+                            </div>
+                            <div class="radio-button-group">
+                                <input type="radio" id="male" name="male" value="male" class="radio-button"/>
+                                <label for="male">Man</label>
+                                <input type="radio" id="female" class="radio-button"/>
+                                <label for="female" name="female" value="female">Woman</label>
+                                <input type="radio" id="unisex" name="unisex" value="unisex" class="radio-button"/>
+                                <label for="unisex">Unisex</label>
+                            </div>
+                        </div>
+                        <div class="labeled-filter">
+                            <div class="label-container">
+                                <span>Category:</span>
+                            </div>
+                            <div>
+                                <select class="select select-green">
+                                    <option value="0"></option>
+                                    <option value="1">Active wear</option>
+                                    <option value="2">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-row-separator"></div>
+                    <div class="filter-row-bottom">
+                        <div class="labeled-filter">
+                            <div class="label-container">
+                                <span>Rating:</span>
+                            </div>
+                            <div>
+                                <div class="slider">
+                                    <div class="slider-bar slider-bar-left"></div>
+                                    <div class="slider-bar slider-bar-active slider-bar-middle"></div>
+                                    <div class="slider-bar slider-bar-right"></div>
+                                    <div class="slider-button slider-button-left">
+                                        <span>50</span>
+                                    </div>
+                                    <div class="slider-button slider-button-right">
+                                        <span>250</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="labeled-filter">
+                            <div class="label-container">
+                                <span>Price:</span>
+                            </div>
+                            <div>
+                                <div class="slider">
+                                    <div class="slider-bar slider-bar-left"></div>
+                                    <div class="slider-bar slider-bar-active slider-bar-middle"></div>
+                                    <div class="slider-bar slider-bar-right"></div>
+                                    <div class="slider-button slider-button-left">
+                                        <span>50</span>
+                                    </div>
+                                    <div class="slider-button slider-button-right">
+                                        <span>250</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-picture"></div>
+                        <div class="rating-bar">
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star rating-star-active"></div>
+                            <div class="rating-star"></div>
+                            <div class="rating-star"></div>
+                        </div>
+                        <div class="product-details-panel">
+                            <div class="product-title">
+                                Active Coat Lorem 1
+                            </div>
+                            <p class="product-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="product-details-footer">
+                                <div class="price-label">
+                                    <span class="currency-label">$</span>
+                                    <span>32.15</span>
+                                </div>
+                                <button class="button button-primary">Show more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span class="copyright">Copyright "<span class="copyright-company">Demo Shop</span>", 2017</span>
+            </div>
+        </div>
+    </body>
+</html>

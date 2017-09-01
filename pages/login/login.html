@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="../../components/app/app.css"/>
+        <link rel="stylesheet" href="../../components/header/header.css"/>
+        <link rel="stylesheet" href="../../components/button/button.css"/>
+        <link rel="stylesheet" href="../../components/textInput/textInput.css"/>
+        <link rel="stylesheet" href="../../components/modal/modal.css"/>
+        <link rel="stylesheet" href="../../components/footer/footer.css"/>
+        <link rel="stylesheet" href="login.css"/>
+    </head>
+    <body>
+        <div id="app">
+            <div id="overlay"></div>
+            <div class="modal login">
+                <div class="modal-header">Login to "Demo Shop"</div>
+                <div class="modal-body">
+                    <div class="text-input-container">
+                        <label for="text1">Your login:</label>
+                        <input type="text" id="text1" class="input-login" required/>
+                    </div>
+                    <div class="text-input-container">
+                        <label for="text2">Your password:</label>
+                        <input type="password" id="text2" class="input-password" required/>
+                    </div>
+                    <div class="button-container">
+                        <button class="button button-primary button-big">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div id="blured-container" class="active">
+                <div id="header" class="header">
+                    <div class="centered-bar">
+                        <img src="../../components/header/logo.svg" alt="cart" class="cart-icon"/>
+                        <div class="username-container">
+                            <span>Hello, John Doe</span>
+                            <img src="../../components/header/header-logout.svg" class="exit-icon" alt="exit"/>
+                        </div>
+                        <span style="clear: both"></span>
+                    </div>
+                </div>
+                <div class="content"></div>
+                <div class="footer">
+                    <span class="copyright">Copyright "<span class="copyright-company">Demo Shop</span>", 2017</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

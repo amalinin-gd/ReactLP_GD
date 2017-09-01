@@ -1,0 +1,28 @@
+.graphic-container {
+    width: 100%;
+    padding-top: 60px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.graphic-item {
+    width: 48%;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.graph1 {
+    background: url("1.png");
+    background-size: cover;
+}
+
+@media (max-width: 800px) {
+    .graphic-container {
+        white-space: normal;
+    }
+
+    .graphic-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

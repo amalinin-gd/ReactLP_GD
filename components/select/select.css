@@ -1,0 +1,26 @@
+.select {
+    height: 35px;
+    width: 235px;
+    border-radius: 5px;
+    color: #000;
+    border-width: 0;
+    font-family: "PT Sans", serif;
+    font-size: 14px;
+    -webkit-appearance:none;
+    padding-left: 20px;
+    background: #fff url(down2.svg) no-repeat calc(100% - 10px);
+
+    /*this removes an arrow in FF*/
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+.select:active, .select:focus {
+    outline: none;
+}
+
+.select-green {
+    color: #fff;
+    background: #288575 url(down.svg) no-repeat calc(100% - 10px);
+}

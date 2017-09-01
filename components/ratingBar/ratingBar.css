@@ -1,0 +1,19 @@
+.rating-bar {
+    height: 30px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 6px 22px;
+}
+
+.rating-bar .rating-star {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background-image: url("star-inactive.svg");
+    background-size: contain;
+    cursor: pointer;
+}
+
+.rating-bar .rating-star-active {
+    background-image: url("star-active.svg");
+}
