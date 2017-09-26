@@ -27,7 +27,7 @@ export default class ProductTextCollection {
         return result;
     }
 
-    getPrevious(){
+    getPrevious() {
         let result;
 
         this.currentStringIndex--;
