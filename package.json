@@ -1,0 +1,29 @@
+{
+  "name": "react-lp-gd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amalinin-gd/ReactLP_GD.git"
+  },
+  "author": "Anton Malinin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amalinin-gd/ReactLP_GD/issues"
+  },
+  "homepage": "https://github.com/amalinin-gd/ReactLP_GD#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "html-loader": "^0.5.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
