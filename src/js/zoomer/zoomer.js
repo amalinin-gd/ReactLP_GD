@@ -95,13 +95,13 @@ export default class Zoomer {
 
     updateZoomedPicture(mouseCoordinates) {
         let initialPicture = this.pictureCollection.getCurrent();
-        let backgroundPosition = this.calculateZoomedPictureElementBackgroundPositionCoordinates(mouseCoordinates);
+        let backgroundPosition = this.calculateZoomedPictureBackgroundPosition(mouseCoordinates);
 
         this.zoomedPictureElement.style.backgroundImage = `url(pages/product/${initialPicture})`;
         this.zoomedPictureElement.style.backgroundPosition = `${backgroundPosition.x}px ${backgroundPosition.y}px`;
     }
 
-    calculateZoomedPictureElementBackgroundPositionCoordinates(mouseCoordinates) {
+    calculateZoomedPictureBackgroundPosition(mouseCoordinates) {
         let x = -((mouseCoordinates.x * this.magnificationCoefficient) - (this.zoomedPictureWidth / 2));
         let y = -((mouseCoordinates.y * this.magnificationCoefficient) - (this.zoomedPictureHeight / 2));
 

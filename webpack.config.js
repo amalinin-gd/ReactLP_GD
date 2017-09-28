@@ -1,16 +1,17 @@
 const path = require('path');
 
 const PATHS = {
-    source: path.join(__dirname, 'js'),
-    build: path.join(__dirname, 'dist'),
-
+    source: path.resolve(__dirname, 'src'),
+    build: path.resolve(__dirname, 'dist'),
+    public: '/assets'
 };
 
 module.exports = {
-    entry: PATHS.source + '/app.js',
+    entry: PATHS.source + '/js/app.js',
     output: {
         filename: 'bundle.js',
-        path: PATHS.build
+        path: PATHS.build,
+        publicPath: PATHS.public
     },
     devtool: 'source-map',
     module: {
@@ -26,5 +27,10 @@ module.exports = {
                 }
             }
         ]
+    },
+    devServer: {
+        contentBase: PATHS.source,
+        compress: true,
+        port: 8080
     }
 };

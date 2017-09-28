@@ -79,6 +79,8 @@ export default class Slider {
         this.pictureElement.style.backgroundImage = `url(pages/product/${picture})`;
         this.changeTextWithSlide(text, '-1000px');
         this.setButtonsVisibility();
+
+        console.log('slide!!!');
     }
 
     changeTextWithSlide(text, finalPosition){
