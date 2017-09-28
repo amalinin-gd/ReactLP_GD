@@ -1,3 +1,4 @@
+//Shareable collection (singletone) that stores product descriptions for the slider
 export default class ProductTextCollection {
     constructor() {
         this.stringsCollection = [
@@ -7,6 +8,14 @@ export default class ProductTextCollection {
         ];
 
         this.currentStringIndex = 0;
+    }
+
+    static getInstance() {
+        if (!this.instance) {
+            this.instance = new ProductTextCollection();
+        }
+
+        return this.instance;
     }
 
     getCurrent() {

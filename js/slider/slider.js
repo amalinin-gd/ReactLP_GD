@@ -1,10 +1,10 @@
-import PictureCollection from './pictureCollection';
-import TextCollection from './productTextCollection';
+import PictureCollection from '../collections/pictureCollection';
+import TextCollection from '../collections/productTextCollection';
 
 export default class Slider {
     constructor() {
-        this.pictureCollection = new PictureCollection();
-        this.textCollection = new TextCollection();
+        this.pictureCollection = PictureCollection.getInstance();
+        this.textCollection = TextCollection.getInstance();
     }
 
     init() {
@@ -22,7 +22,7 @@ export default class Slider {
     setInitialPicture() {
         let initialPicture = this.pictureCollection.getCurrent();
 
-        this.pictureElement.style.backgroundImage = `url(../${initialPicture})`;
+        this.pictureElement.style.backgroundImage = `url(pages/product/${initialPicture})`;
     }
 
     setInitialText(){
@@ -63,12 +63,11 @@ export default class Slider {
         this.rightSlideButton.addEventListener('click', this.slideRight.bind(this));
     }
 
-
     slideLeft() {
         let picture = this.pictureCollection.getPrevious();
         let text = this.textCollection.getPrevious();
 
-        this.pictureElement.style.backgroundImage = `url(../${picture})`;
+        this.pictureElement.style.backgroundImage = `url(pages/product/${picture})`;
         this.changeTextWithSlide(text, '1000px');
         this.setButtonsVisibility();
     }
@@ -77,7 +76,7 @@ export default class Slider {
         let picture = this.pictureCollection.getNext();
         let text = this.textCollection.getNext();
 
-        this.pictureElement.style.backgroundImage = `url(../${picture})`;
+        this.pictureElement.style.backgroundImage = `url(pages/product/${picture})`;
         this.changeTextWithSlide(text, '-1000px');
         this.setButtonsVisibility();
     }

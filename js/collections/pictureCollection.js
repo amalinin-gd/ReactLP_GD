@@ -1,3 +1,4 @@
+//Shareable collection (singletone) that stores pictures for the slider
 export default class PictureCollection {
     constructor() {
         this.pictures = [
@@ -7,6 +8,14 @@ export default class PictureCollection {
         ];
 
         this.currentPictureIndex = 0;
+    }
+
+    static getInstance() {
+        if (!this.instance) {
+            this.instance = new PictureCollection();
+        }
+
+        return this.instance;
     }
 
     getCurrent() {
@@ -27,7 +36,7 @@ export default class PictureCollection {
         return result;
     }
 
-    getPrevious(){
+    getPrevious() {
         let result;
 
         this.currentPictureIndex--;
@@ -45,7 +54,7 @@ export default class PictureCollection {
         return !!this.pictures[this.currentPictureIndex + 1];
     }
 
-    isPreviousAvailable(){
+    isPreviousAvailable() {
         return !!this.pictures[this.currentPictureIndex - 1];
     }
 }

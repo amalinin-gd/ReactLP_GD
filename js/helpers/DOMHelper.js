@@ -1,7 +1,6 @@
 export default class DOMHelper {
     getMouseCoordinatesOverElement(element, mouseEvent) {
-        let x;
-        let y;
+        let x, y;
         let pictureElementPosition = this.getElementPosition(element);
 
         x = mouseEvent.pageX - pictureElementPosition.x;
@@ -20,15 +19,15 @@ export default class DOMHelper {
             y += element.offsetTop;
 
             let style = getComputedStyle(element, null);
-            let borderTop = this.getNumericStyleProperty(style, "border-top-width");
-            let borderLeft = this.getNumericStyleProperty(style, "border-left-width");
+            let borderTop = this.getNumericStyleProperty(style, 'border-top-width');
+            let borderLeft = this.getNumericStyleProperty(style, 'border-left-width');
 
             y += borderTop;
             x += borderLeft;
 
             if (inner) {
-                let paddingTop = this.getNumericStyleProperty(style, "padding-top");
-                let paddingLeft = this.getNumericStyleProperty(style, "padding-left");
+                let paddingTop = this.getNumericStyleProperty(style, 'padding-top');
+                let paddingLeft = this.getNumericStyleProperty(style, 'padding-left');
 
                 y += paddingTop;
                 x += paddingLeft;
@@ -38,6 +37,15 @@ export default class DOMHelper {
         } while (element = element.offsetParent);
 
         return { x, y };
+    }
+
+    getElementSizes(element){
+        let style = getComputedStyle(element, null);
+        
+        return {
+            height: this.getNumericStyleProperty(style, 'height'),
+            width: this.getNumericStyleProperty(style, 'width')
+        };
     }
 
     getNumericStyleProperty(style, prop) {
