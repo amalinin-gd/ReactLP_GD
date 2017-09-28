@@ -50,6 +50,15 @@
     overflow: hidden;
 }
 
+.product-card-detailed .picture-container .product-picture .water-mark{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 18px;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
 .product-card-detailed .picture-container .product-picture .product-text {
     position: relative;
     top: 260px;
