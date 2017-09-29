@@ -5,7 +5,7 @@
     padding: 6px 22px;
 }
 
-.rating-bar .rating-star {
+.rating-star {
     display: inline-block;
     height: 18px;
     width: 18px;
@@ -14,6 +14,6 @@
     cursor: pointer;
 }
 
-.rating-bar .rating-star-active {
+.rating-star-active {
     background-image: url("star-active.svg");
 }

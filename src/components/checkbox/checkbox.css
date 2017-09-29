@@ -3,7 +3,6 @@ input[type="checkbox"].checkbox-switch {
 }
 
 input[type="checkbox"].checkbox-switch + label {
-    font-family: "PT Sans", serif;
     font-size: 14px;
     position: relative;
     padding-left: 50px;

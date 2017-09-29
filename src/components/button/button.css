@@ -6,7 +6,6 @@
     border-radius: 5px;
     color: #fff;
     text-align: center;
-    font-family: "PT Sans", serif;
     font-size: 14px;
     background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%);
 }
@@ -36,7 +35,6 @@
 .button-big {
     height: 50px;
     min-width: 170px;
-    font-family: "PT Sans Caption", serif;
     font-size: 18px;
     font-weight: bold;
 }

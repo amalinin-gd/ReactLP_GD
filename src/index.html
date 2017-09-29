@@ -1,116 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Product</title>
-        <link rel="stylesheet" href="components/app/app.css"/>
-        <link rel="stylesheet" href="components/header/header.css"/>
-        <link rel="stylesheet" href="components/button/button.css"/>
-        <link rel="stylesheet" href="components/ratingBar/ratingBar.css"/>
-        <link rel="stylesheet" href="components/productDetailsPanel/productDetailsPanel.css"/>
-        <link rel="stylesheet" href="components/footer/footer.css"/>
-        <link rel="stylesheet" href="components/modal/modal.css"/>
-        <link rel="stylesheet" href="components/textInput/textInput.css"/>
-        <link rel="stylesheet" href="components/select/select.css"/>
-        <link rel="stylesheet" href="components/editModalContent/editModalContent.css"/>
-        <link rel="stylesheet" href="components/radioButton/radioButton.css"/>
-        <link rel="stylesheet" href="components/radioButtonGroup/radioButtonGroup.css"/>
-        <link rel="stylesheet" href="pages/product/productPage.css"/>
-    </head>
-    <body>
-        <div id="app" class="product">
-            <div id="blured-container">
-                <div id="header" class="header">
-                    <div class="centered-bar">
-                        <img src="components/header/logo.svg" alt="cart" class="cart-icon"/>
+  <head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <link rel="stylesheet" href="components/app/app.css"/>
+    <link rel="stylesheet" href="components/header/header.css"/>
+    <link rel="stylesheet" href="components/button/button.css"/>
+    <link rel="stylesheet" href="components/ratingBar/ratingBar.css"/>
+    <link rel="stylesheet" href="components/productDetailsPanel/productDetailsPanel.css"/>
+    <link rel="stylesheet" href="components/footer/footer.css"/>
+    <link rel="stylesheet" href="components/modal/modal.css"/>
+    <link rel="stylesheet" href="components/textInput/textInput.css"/>
+    <link rel="stylesheet" href="components/select/select.css"/>
+    <link rel="stylesheet" href="components/editModalContent/editModalContent.css"/>
+    <link rel="stylesheet" href="components/radioButton/radioButton.css"/>
+    <link rel="stylesheet" href="components/radioButtonGroup/radioButtonGroup.css"/>
+    <link rel="stylesheet" href="components/review/review.css"/>
+    <link rel="stylesheet" href="pages/product/productPage.css"/>
+  </head>
+  <body>
+    <div id="app" class="product">
+      <div id="blured-container">
+        <div id="header" class="header">
+          <div class="centered-bar">
+            <img src="components/header/logo.svg" alt="cart" class="cart-icon"/>
 
-                        <div class="username-container">
-                            <span>Hello, John Doe</span>
-                            <img src="components/header/header-logout.svg" class="exit-icon" alt="exit"/>
-                        </div>
-                        <span style="clear: both"></span>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <div class="sub-header">
-                    <span class="back-link">
-                        Back
-                    </span>
-
-                        <div class="category-label">
-                            <span>Category: </span>
-                            <span class="category"> Man / Active wear</span>
-                        </div>
-                    </div>
-                    <div class="product-card-detailed">
-                        <div class="picture-container" id="picture-container">
-                            <div class="product-picture" id="product-picture">
-                                <div class="water-mark">Demo Shop</div>
-                                <div class="product-slider-btn product-slider-btn-left" id="slider-btn-left"></div>
-                                <div class="product-slider-btn product-slider-btn-right" id="slider-btn-right"></div>
-                                <div class="product-text" id="product-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                </div>
-                            </div>
-                            <div class="rating-bar">
-                                <div class="rating-star rating-star-active"></div>
-                                <div class="rating-star rating-star-active"></div>
-                                <div class="rating-star rating-star-active"></div>
-                                <div class="rating-star"></div>
-                                <div class="rating-star"></div>
-                            </div>
-                        </div>
-                        <div class="details-container">
-                            <div class="product-details-panel">
-                                <div class="product-title">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore
-                                </div>
-                                <p class="product-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco
-                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                                    consectetur
-                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco
-                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                                    consectetur
-                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco
-                                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                                    consectetur
-                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-
-                                <div class="product-details-footer">
-                                    <div class="price-label">
-                                        <span class="currency-label">$</span>
-                                        <span>32.15</span>
-                                    </div>
-                                    <span class="items-left-label">(9 items left)</span>
-                                    <button class="button button-primary">Buy</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer">
-                    <span class="copyright">Copyright "<span class="copyright-company">Demo Shop</span>", 2017</span>
-                </div>
+            <div class="username-container">
+              <span>Hello, John Doe</span>
+              <img src="components/header/header-logout.svg" class="exit-icon" alt="exit"/>
             </div>
-            <div id="overlay" style="display: none"></div>
+            <span style="clear: both"></span>
+          </div>
         </div>
-        <script src="/assets/bundle.js"></script>
-    </body>
+
+        <div class="content">
+          <div class="sub-header">
+            <span class="back-link">Back</span>
+
+            <div class="category-label">
+              <span>Category: </span>
+              <span class="category"> Man / Active wear</span>
+            </div>
+          </div>
+          <div class="product-card-detailed">
+            <div class="picture-container" id="picture-container">
+              <div class="product-picture" id="product-picture">
+                <div class="water-mark">Demo Shop</div>
+                <div class="product-slider-btn product-slider-btn-left" id="slider-btn-left"></div>
+                <div class="product-slider-btn product-slider-btn-right" id="slider-btn-right"></div>
+                <div class="product-text" id="product-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </div>
+              </div>
+              <div class="rating-bar">
+                <div class="rating-star rating-star-active"></div>
+                <div class="rating-star rating-star-active"></div>
+                <div class="rating-star rating-star-active"></div>
+                <div class="rating-star"></div>
+                <div class="rating-star"></div>
+              </div>
+            </div>
+            <div class="details-container">
+              <div class="product-details-panel">
+                <div class="product-title">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+
+                <div class="product-details-footer">
+                  <div class="price-label">
+                    <span class="currency-label">$</span>
+                    <span>32.15</span>
+                  </div>
+                  <span class="items-left-label">(9 items left)</span>
+                  <button class="button button-primary">Buy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-notice">
+            <span>There is no user reviews for now.</span>
+            <span>
+              <span>Would you like to</span>
+              <span class="review-link">share your thoughts with other customers</span>
+              <span>?</span>
+            </span>
+          </div>
+          <div class="review">
+            <div class="review-title">Add Review</div>
+            <div class="review-header">
+              <div class="review-info">
+                <span>By </span>
+                <span class="emphasized">your name</span>
+                <span> March 4, 2017</span>
+              </div>
+
+              <div class="review-result">
+                <div class="avatar"></div>
+                <div class="review-text-container">
+                  <span class="review-text-placeholder" style="display: none">
+                    Start typing and your review text will appear here...
+                  </span>
+
+                  <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                    consectetur
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                    consectetur
+                  </p>
+                  <ul class="quotas">
+                    <li>This is a quote</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="review-body">
+              <div class="review-body-title">Edit your review</div>
+              <div class="section-left">
+                <div class="text-input-container">
+                  <label for="user-name">Enter your name:</label>
+                  <input type="text" id="user-name"/>
+                </div>
+                <div class="text-input-container">
+                  <label>Choose your avatar:</label>
+                  <div class="avatar-container">
+                    <span>Image selected</span>
+                    <div class="avatar"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="section-right">
+                <div class="rating">
+                  <span>Rate product:</span>
+                  <div class="rating-star rating-star-active"></div>
+                  <div class="rating-star rating-star-active"></div>
+                  <div class="rating-star rating-star-active"></div>
+                  <div class="rating-star"></div>
+                  <div class="rating-star"></div>
+                </div>
+                <div class="text-input-container">
+                  <label for="description">Write your review:</label>
+                  <textarea id="description"></textarea>
+                </div>
+                <div class="button-container">
+                  <div class="button-container-left">
+                    <button class="button">Bold</button>
+                    <button class="button">Emphasize</button>
+                    <button class="button">Quote</button>
+                  </div>
+                  <div class="button-container-right">
+                    <button class="button">Cancel</button>
+                    <button class="button button-primary">Add review</button>
+                  </div>
+                </div>
+              </div>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <span class="copyright">Copyright "<span class="copyright-company">Demo Shop</span>", 2017</span>
+        </div>
+      </div>
+      <div id="overlay" style="display: none"></div>
+    </div>
+    <script src="/assets/bundle.js"></script>
+  </body>
 </html>

@@ -11,7 +11,6 @@
     padding: 15px 0 10px 0;
     border-bottom: 2px solid #3FC5CB;
     color: #000000;
-    font-family: "PT Sans", serif;
     font-size: 18px;
     font-weight: bold;
 }
@@ -23,7 +22,6 @@
     text-align: justify;
     overflow: hidden;
     color: #000000;
-    font-family: "PT Sans", serif;
     font-size: 14px;
 }
 
@@ -45,7 +43,6 @@
     padding-top: 5px;
     height: 35px;
     color: #000000;
-    font-family: "PT Sans", serif;
     font-size: 0; /*hack to remove a space between child spans*/
     font-weight: bold;
 }

@@ -3,7 +3,6 @@ input[type="radio"].radio-button {
 }
 
 input[type="radio"].radio-button + label {
-    font-family: "PT Sans", serif;
     font-size: 14px;
     position: relative;
     padding-left: 32px;

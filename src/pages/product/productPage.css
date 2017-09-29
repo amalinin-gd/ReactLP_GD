@@ -1,7 +1,6 @@
 .sub-header {
     width: 100%;
     color: #FFFFFF;
-    font-family: "PT Sans", serif;
     font-size: 16px;
     height: 60px;
     padding-top: 18px;
@@ -50,7 +49,7 @@
     overflow: hidden;
 }
 
-.product-card-detailed .picture-container .product-picture .water-mark{
+.product-card-detailed .picture-container .product-picture .water-mark {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -67,7 +66,6 @@
     height: 50px;
     width: 525px;
     color: #FFFFFF;
-    font-family: "PT Sans", serif;
     font-size: 14px;
     font-style: italic;
     line-height: 19px;
@@ -138,6 +136,24 @@
     width: 740px;
 }
 
+.product .review-notice {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.product .review-notice > span {
+    display: block;
+}
+
+.product .review-notice .review-link {
+    text-decoration: underline;
+    color: #f7ff00;
+    cursor: pointer;
+}
+
 @media (min-width: 800px) {
     .product-card-detailed .details-container .product-details-panel {
         padding-left: 0;
@@ -153,7 +169,6 @@
     .product-card-detailed {
         width: 100%;
         height: auto;
-        margin-bottom: 400px;
     }
 
     .product-card-detailed .picture-container,
