@@ -106,40 +106,27 @@
             <span>There is no user reviews for now.</span>
             <span>
               <span>Would you like to</span>
-              <span class="review-link">share your thoughts with other customers</span>
+              <span class="review-link" id="review-link">share your thoughts with other customers</span>
               <span>?</span>
             </span>
           </div>
-          <div class="review">
+          <div class="review" id="review-editor" style="display: none">
             <div class="review-title">Add Review</div>
             <div class="review-header">
               <div class="review-info">
                 <span>By </span>
-                <span class="emphasized">your name</span>
+                <span class="emphasized" id="user-name-container">your name</span>
                 <span> March 4, 2017</span>
               </div>
 
               <div class="review-result">
-                <div class="avatar"></div>
+                <img class="avatar" id="user-avatar"/>
                 <div class="review-text-container">
                   <span class="review-text-placeholder" style="display: none">
                     Start typing and your review text will appear here...
                   </span>
 
-                  <p class="review-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                    consectetur
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                    consectetur
-                  </p>
+                  <pre class="review-text" id="review-text-container"></pre>
                   <ul class="quotas">
                     <li>This is a quote</li>
                   </ul>
@@ -156,8 +143,9 @@
                 <div class="text-input-container">
                   <label>Choose your avatar:</label>
                   <div class="avatar-container">
-                    <span>Image selected</span>
-                    <div class="avatar"></div>
+                    <input id="file" type="file"/>
+                    <span id="avatar-preview-label" style="display: none">Image selected</span>
+                    <img src="" alt="" id="avatar-preview" class="avatar" style="display: none"/>
                   </div>
                 </div>
               </div>
@@ -171,8 +159,8 @@
                   <div class="rating-star"></div>
                 </div>
                 <div class="text-input-container">
-                  <label for="description">Write your review:</label>
-                  <textarea id="description"></textarea>
+                  <label for="review-text">Write your review:</label>
+                  <textarea id="review-text"></textarea>
                 </div>
                 <div class="button-container">
                   <div class="button-container-left">
@@ -181,7 +169,7 @@
                     <button class="button">Quote</button>
                   </div>
                   <div class="button-container-right">
-                    <button class="button">Cancel</button>
+                    <button class="button" id="cancel-btn">Cancel</button>
                     <button class="button button-primary">Add review</button>
                   </div>
                 </div>
