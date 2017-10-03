@@ -1,6 +1,10 @@
 export default class ReviewEditor {
     constructor() {
         this.editorEnabled = false;
+        this.selectedText = '';
+        this.selectionStart = null;
+        this.selectionEnd = null;
+        this.isTextSelected = false;
     }
 
     init() {
@@ -45,17 +49,24 @@ export default class ReviewEditor {
     cacheTargetElements() {
         this.userNameContainer = document.getElementById('user-name-container');
         this.reviewTextContainer = document.getElementById('review-text-container');
+        this.reviewTextEditor = document.getElementById('review-text');
         this.avatarPreview = document.getElementById('avatar-preview');
         this.avatarUploader = document.getElementById('file');
         this.avatarPreviewLabel = document.getElementById('avatar-preview-label');
         this.userAvatarContainer = document.getElementById('user-avatar');
+        this.emphasizeBtn = document.getElementById('emphasize-btn');
     }
 
     addEventHandlers() {
         this.attachEventHandler('user-name', 'input', this.onUserNameChange);
         this.attachEventHandler('review-text', 'input', this.onReviewTextChange);
+        this.attachEventHandler('review-text', 'mouseup', this.onTextSelectChange);
+        this.attachEventHandler('review-text', 'keyup', this.onTextSelectChange);
         this.attachEventHandler('cancel-btn', 'click', this.hideEditor);
         this.attachEventHandler('file', 'change', this.onAvatarFileSelected);
+        this.attachEventHandler('emphasize-btn', 'click', this.setEmphasized);
+        this.attachEventHandler('bold-btn', 'click', this.setBold);
+        this.attachEventHandler('quote-btn', 'click', this.setQuote);
     }
 
     attachEventHandler(elementId, eventName, eventHandlerFn) {
@@ -77,8 +88,8 @@ export default class ReviewEditor {
         this.userNameContainer.innerHTML = text;
     }
 
-    onReviewTextChange(e) {
-        this.reviewTextContainer.innerHTML = e.target.value;
+    onReviewTextChange() {
+        this.reviewTextContainer.innerHTML = this.convertReviewText(this.reviewTextEditor.value);
     }
 
     onAvatarFileSelected(e) {
@@ -94,5 +105,54 @@ export default class ReviewEditor {
         }.bind(this);
 
         fileReader.readAsDataURL(file);
+    }
+
+    onTextSelectChange(e) {
+        this.selectedText = document.getSelection().toString();
+        this.selectionStart = e.target.selectionStart;
+        this.selectionEnd = e.target.selectionEnd;
+    }
+
+    setEmphasized() {
+        this.tagReviewSubstring('i');
+    }
+
+    setBold() {
+        this.tagReviewSubstring('b');
+    }
+
+    setQuote() {
+        this.tagReviewSubstring('q');
+    }
+
+    tagReviewSubstring(tagName) {
+        let text = this.reviewTextEditor.value;
+        let formattedSubstring = `[${tagName}]${this.selectedText}[/${tagName}]`;
+        //todo move to a helper
+        let updatedText = text.substr(0, this.selectionStart) + formattedSubstring + text.substr(this.selectionEnd);
+        this.reviewTextEditor.value = updatedText;
+        this.reviewTextEditor.dispatchEvent(new Event('input'));
+    }
+
+
+    convertReviewText(sourceText) {
+        let emphasized = sourceText.match(/((\[i])((?!(\[\/i])).)*(\[\/i]))/g);
+        //let bold = sourceText.match(/(\[b]).*(\[\/b])/g);
+        //let quoted = sourceText.match(/(\[q]).*(\[\/q])/g);
+        let newText = sourceText.slice();
+
+
+        if (emphasized) {
+            emphasized.forEach((formattedString) => {
+                let stringValue = formattedString.replace('[i]', '');
+                stringValue = stringValue.replace('[/i]', '');
+
+                let taggedString = `<span class="emphasized">${stringValue}</span>`;
+
+                newText = newText.replace(formattedString, taggedString);
+            });
+        }
+
+        return newText;
     }
 }
