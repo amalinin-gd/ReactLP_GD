@@ -1,8 +1,10 @@
 import StringHelper from '../helpers/stringHelper';
+import DOMHelper from '../helpers/DOMHelper';
 
 export default class ReviewEditor {
     constructor() {
         this.stringHelper = StringHelper.getInstance();
+        this.domHelper = DOMHelper.getInstance();
         this.editorEnabled = false;
         this.selectedText = '';
         this.selectionStart = null;
@@ -18,9 +20,6 @@ export default class ReviewEditor {
         }
 
         this.initEditor();
-
-        //todo remove
-        this.showEditor();
     }
 
     onReviewLinkClick() {
@@ -34,7 +33,7 @@ export default class ReviewEditor {
             return;
         }
 
-        this.cacheTargetElements();
+        this.cacheElements();
         this.addEventHandlers();
     }
 
@@ -48,7 +47,7 @@ export default class ReviewEditor {
         this.reviewEditorElement.style.display = 'block';
     }
 
-    cacheTargetElements() {
+    cacheElements() {
         this.userNameContainer = document.getElementById('user-name-container');
         this.reviewTextContainer = document.getElementById('review-text-container');
         this.reviewTextEditor = document.getElementById('review-text');
@@ -56,6 +55,8 @@ export default class ReviewEditor {
         this.avatarUploader = document.getElementById('file');
         this.avatarPreviewLabel = document.getElementById('avatar-preview-label');
         this.userAvatarContainer = document.getElementById('user-avatar');
+        this.productRatingEditor = document.getElementById('rate-product');
+        this.productRatingContainer = document.getElementById('product-rating');
     }
 
     addEventHandlers() {
@@ -68,6 +69,7 @@ export default class ReviewEditor {
         this.attachEventHandler('emphasize-btn', 'click', this.setEmphasized);
         this.attachEventHandler('bold-btn', 'click', this.setBold);
         this.attachEventHandler('quote-btn', 'click', this.setQuote);
+        this.attachEventHandler('rate-product', 'click', this.onRatingClick);
     }
 
     attachEventHandler(elementId, eventName, eventHandlerFn) {
@@ -80,9 +82,10 @@ export default class ReviewEditor {
 
     onUserNameChange(e) {
         let text = e.target.value;
+        let defaultText = 'your name';
 
         if (!text) {
-            this.userNameContainer.innerHTML = 'your name';
+            this.userNameContainer.innerHTML = defaultText;
             return;
         }
 
@@ -90,7 +93,7 @@ export default class ReviewEditor {
     }
 
     onReviewTextChange() {
-        this.reviewTextContainer.innerHTML = this.convertReviewText(this.reviewTextEditor.value);
+        this.reviewTextContainer.innerHTML = this.processReviewTextSource(this.reviewTextEditor.value);
     }
 
     onAvatarFileSelected(e) {
@@ -115,28 +118,26 @@ export default class ReviewEditor {
     }
 
     setEmphasized() {
-        this.tagReviewSubstring('i');
+        this.tagSubstringAndDispatchInputEvent('i');
     }
 
     setBold() {
-        this.tagReviewSubstring('b');
+        this.tagSubstringAndDispatchInputEvent('b');
     }
 
     setQuote() {
-        this.tagReviewSubstring('q');
+        this.tagSubstringAndDispatchInputEvent('q');
     }
 
-    tagReviewSubstring(tagName) {
+    tagSubstringAndDispatchInputEvent(tagName) {
         let text = this.reviewTextEditor.value;
         let formattedSubstring = `[${tagName}]${this.selectedText}[/${tagName}]`;
-        let updatedText = this.stringHelper.replaceAt(text, formattedSubstring, this.selectionStart, this.selectionEnd);
 
-        this.reviewTextEditor.value = updatedText;
+        this.reviewTextEditor.value = this.stringHelper.replaceSubstringAt(text, formattedSubstring, this.selectionStart, this.selectionEnd);
         this.reviewTextEditor.dispatchEvent(new Event('input'));
     }
 
-
-    convertReviewText(text) {
+    processReviewTextSource(text) {
         let tagMetadata = {
             emphasized: {
                 formatTagName: 'i',
@@ -165,7 +166,7 @@ export default class ReviewEditor {
         return text;
     }
 
-    processTextForTag(text, tagMetadata){
+    processTextForTag(text, tagMetadata) {
         let processedText = text;
         let tagEntries = text.match(tagMetadata.regex);
 
@@ -180,5 +181,29 @@ export default class ReviewEditor {
         }
 
         return processedText;
+    }
+
+    onRatingClick(e) {
+        if (this.domHelper.elementHasClass(e.target, 'rating-star')) {
+            let rating = e.target.getAttribute('data-rating');
+            this.synchronizeRatings(rating);
+        }
+    }
+
+    synchronizeRatings(ratingValue) {
+        this.updateRating(this.productRatingEditor, ratingValue);
+        this.updateRating(this.productRatingContainer, ratingValue);
+    }
+
+    updateRating(ratingElement, ratingValue) {
+        let ratingStarElements = ratingElement.getElementsByClassName('rating-star');
+
+        for (let i = 0; i < ratingStarElements.length; i++) {
+            if (ratingStarElements[i].getAttribute('data-rating') <= ratingValue) {
+                ratingStarElements[i].classList.add('rating-star-active');
+            } else {
+                ratingStarElements[i].classList.remove('rating-star-active');
+            }
+        }
     }
 }

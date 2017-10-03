@@ -7,7 +7,7 @@ export default class StringHelper {
         return this.instance;
     }
 
-    replaceAt(str, newSubstring, indexStart, indexEnd) {
+    replaceSubstringAt(str, newSubstring, indexStart, indexEnd) {
         return str.substr(0, indexStart) + newSubstring + str.substr(indexEnd);
     }
 

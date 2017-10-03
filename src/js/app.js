@@ -4,8 +4,10 @@ import ReviewEditor from './reviewEditor/reviewEditor';
 
 class App {
     constructor() {
+        let magnificationIndex = 2;
+
         this.slider = new Slider();
-        this.zoomer = new Zoomer(2);
+        this.zoomer = new Zoomer(magnificationIndex);
         this.reviewEditorElement = new ReviewEditor();
     }
 }

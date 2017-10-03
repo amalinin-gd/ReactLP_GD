@@ -24,6 +24,13 @@
     height: 180px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
+    position: relative;
+}
+
+.review .review-header .rating{
+    position: absolute;
+    top: 10px;
+    right: 15px;
 }
 
 .review .review-header .review-info {

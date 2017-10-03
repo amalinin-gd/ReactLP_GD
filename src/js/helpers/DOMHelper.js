@@ -1,4 +1,12 @@
 export default class DOMHelper {
+    static getInstance(){
+        if(!this.instance){
+            this.instance = new DOMHelper();
+        }
+
+        return this.instance;
+    }
+
     getMouseCoordinatesOverElement(element, mouseEvent) {
         let x, y;
         let pictureElementPosition = this.getElementPosition(element);
@@ -50,5 +58,9 @@ export default class DOMHelper {
 
     getNumericStyleProperty(style, prop) {
         return parseInt(style.getPropertyValue(prop), 10);
+    }
+
+    elementHasClass(element, className){
+        return element.classList.contains(className);
     }
 }

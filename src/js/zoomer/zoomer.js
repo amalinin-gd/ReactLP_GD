@@ -3,7 +3,7 @@ import PictureCollection from '../collections/pictureCollection';
 
 export default class Zoomer {
     constructor(magnificationCoefficient) {
-        this.domHelper = new DOMHelper();
+        this.domHelper = DOMHelper.getInstance(); ;
         this.pictureCollection = PictureCollection.getInstance();
         this.magnificationCoefficient = magnificationCoefficient;
         this.zoomingAreaRectangleWidth = 100;
