@@ -66,7 +66,7 @@
 
 .review .review-header .review-result .review-text {
     width: 100%;
-    max-height: 60px;
+    max-height: 120px;
     overflow-y: scroll;
     font-size: 14px;
     margin: 0 0 0 20px;

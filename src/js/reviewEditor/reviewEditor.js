@@ -1,10 +1,12 @@
+import StringHelper from '../helpers/stringHelper';
+
 export default class ReviewEditor {
     constructor() {
+        this.stringHelper = StringHelper.getInstance();
         this.editorEnabled = false;
         this.selectedText = '';
         this.selectionStart = null;
         this.selectionEnd = null;
-        this.isTextSelected = false;
     }
 
     init() {
@@ -54,7 +56,6 @@ export default class ReviewEditor {
         this.avatarUploader = document.getElementById('file');
         this.avatarPreviewLabel = document.getElementById('avatar-preview-label');
         this.userAvatarContainer = document.getElementById('user-avatar');
-        this.emphasizeBtn = document.getElementById('emphasize-btn');
     }
 
     addEventHandlers() {
@@ -128,56 +129,56 @@ export default class ReviewEditor {
     tagReviewSubstring(tagName) {
         let text = this.reviewTextEditor.value;
         let formattedSubstring = `[${tagName}]${this.selectedText}[/${tagName}]`;
-        //todo move to a helper
-        let updatedText = text.substr(0, this.selectionStart) + formattedSubstring + text.substr(this.selectionEnd);
+        let updatedText = this.stringHelper.replaceAt(text, formattedSubstring, this.selectionStart, this.selectionEnd);
+
         this.reviewTextEditor.value = updatedText;
         this.reviewTextEditor.dispatchEvent(new Event('input'));
     }
 
 
-    convertReviewText(sourceText) {
-        let emphasized = sourceText.match(/((\[i])((?!(\[\/i])).)*(\[\/i]))/g);
-        let bold = sourceText.match(/((\[b])((?!(\[\/b])).)*(\[\/b]))/g);
-        let quoted = sourceText.match(/((\[q])((?!(\[\/q])).)*(\[\/q]))/g);
-        let newText = sourceText.slice();
+    convertReviewText(text) {
+        let tagMetadata = {
+            emphasized: {
+                formatTagName: 'i',
+                htmlTagName: 'span',
+                className: 'emphasized',
+                regex: /((\[i])((?!(\[\/i])).)*(\[\/i]))/g
+            },
+            bold: {
+                formatTagName: 'b',
+                htmlTagName: 'span',
+                className: 'bold',
+                regex: /((\[b])((?!(\[\/b])).)*(\[\/b]))/g
+            },
+            quote: {
+                formatTagName: 'q',
+                htmlTagName: 'p',
+                className: 'quote',
+                regex: /((\[q])((?!(\[\/q])).)*(\[\/q]))/g
+            }
+        };
 
+        text = this.processTextForTag(text, tagMetadata.emphasized);
+        text = this.processTextForTag(text, tagMetadata.bold);
+        text = this.processTextForTag(text, tagMetadata.quote);
 
-        if (emphasized) {
-            //todo move to method
-            emphasized.forEach((formattedString) => {
-                let stringValue = formattedString.replace('[i]', '');
-                stringValue = stringValue.replace('[/i]', '');
+        return text;
+    }
 
-                let taggedString = `<span class="emphasized">${stringValue}</span>`;
+    processTextForTag(text, tagMetadata){
+        let processedText = text;
+        let tagEntries = text.match(tagMetadata.regex);
 
-                newText = newText.replace(formattedString, taggedString);
-            });
+        if (tagEntries) {
+            processedText = this.stringHelper.replaceTags(
+                text,
+                tagEntries,
+                tagMetadata.formatTagName,
+                tagMetadata.htmlTagName,
+                tagMetadata.className
+            );
         }
 
-        if (bold) {
-            //todo move to method
-            bold.forEach((formattedString) => {
-                let stringValue = formattedString.replace('[b]', '');
-                stringValue = stringValue.replace('[/b]', '');
-
-                let taggedString = `<span class="bold">${stringValue}</span>`;
-
-                newText = newText.replace(formattedString, taggedString);
-            });
-        }
-
-        if (quoted) {
-            //todo move to method
-            quoted.forEach((formattedString) => {
-                let stringValue = formattedString.replace('[q]', '');
-                stringValue = stringValue.replace('[/q]', '');
-
-                let taggedString = `<p class="quote">${stringValue}</p>`;
-
-                newText = newText.replace(formattedString, taggedString);
-            });
-        }
-
-        return newText;
+        return processedText;
     }
 }
