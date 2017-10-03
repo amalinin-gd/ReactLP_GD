@@ -8,6 +8,11 @@
     color: #FFD700;
 }
 
+.review .bold {
+    font-weight: bold;
+    color: #FFD700;
+}
+
 .review .review-title {
     color: #FFFFFF;
     font-size: 24px;
@@ -67,21 +72,13 @@
     margin: 0 0 0 20px;
 }
 
-.review .review-header .review-result .quotas {
-    display: block;
-    width: 100%;
-    list-style: none;
-    padding-left: 22px;
-    margin: 7px 0;
-}
-
-.review .review-header .review-result .quotas li {
+.review .review-header .review-result .quote {
     font-size: 24px;
     font-style: italic;
 }
 
-.review .review-header .review-result ul.quotas li::before,
-.review .review-header .review-result ul.quotas li::after {
+.review .review-header .review-result .quote::before,
+.review .review-header .review-result .quote::after {
     content: '';
     display: inline-block;
     height: 32px;
@@ -91,11 +88,11 @@
 
 }
 
-.review .review-header .review-result ul.quotas li::before {
+.review .review-header .review-result .quote::before {
     margin-right: 3px;
 }
 
-.review .review-header .review-result ul.quotas li::after {
+.review .review-header .review-result .quote::after {
     margin-left: 5px;
     background-position: top;
     -moz-transform: rotate(180deg);

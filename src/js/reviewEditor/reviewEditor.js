@@ -137,17 +137,42 @@ export default class ReviewEditor {
 
     convertReviewText(sourceText) {
         let emphasized = sourceText.match(/((\[i])((?!(\[\/i])).)*(\[\/i]))/g);
-        //let bold = sourceText.match(/(\[b]).*(\[\/b])/g);
-        //let quoted = sourceText.match(/(\[q]).*(\[\/q])/g);
+        let bold = sourceText.match(/((\[b])((?!(\[\/b])).)*(\[\/b]))/g);
+        let quoted = sourceText.match(/((\[q])((?!(\[\/q])).)*(\[\/q]))/g);
         let newText = sourceText.slice();
 
 
         if (emphasized) {
+            //todo move to method
             emphasized.forEach((formattedString) => {
                 let stringValue = formattedString.replace('[i]', '');
                 stringValue = stringValue.replace('[/i]', '');
 
                 let taggedString = `<span class="emphasized">${stringValue}</span>`;
+
+                newText = newText.replace(formattedString, taggedString);
+            });
+        }
+
+        if (bold) {
+            //todo move to method
+            bold.forEach((formattedString) => {
+                let stringValue = formattedString.replace('[b]', '');
+                stringValue = stringValue.replace('[/b]', '');
+
+                let taggedString = `<span class="bold">${stringValue}</span>`;
+
+                newText = newText.replace(formattedString, taggedString);
+            });
+        }
+
+        if (quoted) {
+            //todo move to method
+            quoted.forEach((formattedString) => {
+                let stringValue = formattedString.replace('[q]', '');
+                stringValue = stringValue.replace('[/q]', '');
+
+                let taggedString = `<p class="quote">${stringValue}</p>`;
 
                 newText = newText.replace(formattedString, taggedString);
             });
