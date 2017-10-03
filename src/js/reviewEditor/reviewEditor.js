@@ -186,6 +186,7 @@ export default class ReviewEditor {
     onRatingClick(e) {
         if (this.domHelper.elementHasClass(e.target, 'rating-star')) {
             let rating = e.target.getAttribute('data-rating');
+            this.productRatingContainer.style.display = 'block';
             this.synchronizeRatings(rating);
         }
     }
